@@ -1,0 +1,9 @@
+<h1 *ngIf="mostPopularBook">
+  <strong>
+    Most Popular Book: </strong>
+  <u>
+    {{ mostPopularBook.book_title }} -
+    {{mostPopularBook.author_first_name }} {{mostPopularBook.author_last_name}}
+  </u>
+  - Price: {{ mostPopularBook.price }}
+</h1>

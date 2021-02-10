@@ -1,0 +1,16 @@
+<h1><strong> Readers </strong></h1>
+<mat-divider></mat-divider>
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let reader of readerList">
+      <div class="contentContainer">
+        <h4>{{ reader.first_name }} {{ reader.last_name }}</h4>
+        <div class="buttonContainer">
+          <button mat-button (click)="openReaderDetailDialog(reader)">Preview</button>
+          <button mat-button (click)="openReaderDeleteDialog(reader)">Delete</button>
+        </div>
+      </div>
+
+    </mat-list-item>
+  </mat-list>
+</div>

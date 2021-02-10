@@ -1,0 +1,25 @@
+<mat-grid-list cols="4" rowHeight="20:1">
+
+  <mat-grid-tile colspan="3" rowspan="3">
+    <mat-card class="mostPopularBookContainer">
+      <app-most-popular-book [mostPopularBook]="mostPopularBook"></app-most-popular-book>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="37">
+    <mat-card class="readersContainer">
+      <mat-spinner *ngIf="!readerList"></mat-spinner>
+      <app-all-readers *ngIf="readerList" [readerList]="readerList"></app-all-readers>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="3" rowspan="34">
+    <mat-card class="booksContainer">
+      <mat-spinner *ngIf="!bookList"></mat-spinner>
+      <app-all-books *ngIf="bookList" [bookList]="bookList"></app-all-books>
+    </mat-card>
+  </mat-grid-tile>
+
+
+
+</mat-grid-list>

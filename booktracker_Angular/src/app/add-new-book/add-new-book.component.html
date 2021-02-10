@@ -1,0 +1,97 @@
+<div class="body">
+    <div class="container center">
+
+        <h1 *ngIf="!bookAddedSuccessfuly">
+            <strong>New Book</strong>
+        </h1>
+
+        <mat-grid-list cols="6" rowHeight="4.6vh" *ngIf="!bookAddedSuccessfuly">
+
+
+            <mat-grid-tile colspan="2" rowspan="7">
+                <mat-card>
+                    <img class="center" src="https://img.icons8.com/carbon-copy/200/ffffff/book-and-pencil.png" />
+                </mat-card>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile colspan="4" rowspan="7">
+
+                <mat-card>
+                    <form [formGroup]="bookForm">
+
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Author First Name</mat-label>
+                            <input formControlName="author_first_name" matInput placeholder="Mark">
+                            <mat-error
+                                *ngIf="author_first_name && author_first_name.invalid && author_first_name.invalid">
+                                Authors First name must have at least 2 characters..
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Author Last Name</mat-label>
+                            <input formControlName="author_last_name" matInput placeholder="Twain">
+                            <mat-error *ngIf="author_last_name && author_last_name.invalid && author_last_name.touched">
+                                Authors Last name must have at least 2 characters..
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" matInput type="email" placeholder="something@email.com">
+                            <mat-error *ngIf="email && email.invalid && email.touched">
+                                Email must be Valid!
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Book Title</mat-label>
+                            <input formControlName="book_title" matInput placeholder="Some Awesome Book">
+                            <mat-error *ngIf="book_title && book_title.invalid && book_title.touched">
+                                Book Title must have at least 2 characters..
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Book Price</mat-label>
+                            <input formControlName="price" type="number" matInput placeholder="100$">
+                            <mat-error *ngIf="price && price.invalid">
+                                Price must be at least 0.5$
+                            </mat-error>
+                        </mat-form-field>
+                    </form>
+
+                </mat-card>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <ng-container *ngIf="bookAddedSuccessfuly">
+            <div class="center">
+                <img src="https://img.icons8.com/carbon-copy/512/ffffff/check-all--v1.png" />
+                <h1 style="text-align:center;">Book added Successfuly ^_^ </h1>
+            </div>
+        </ng-container>
+
+
+        <ng-container class="button-container">
+            <button style="margin: 2px;" mat-raised-button [routerLink]="['/']"
+                routerLinkActive="router-link-active">Back</button>
+
+            <button type="submit" *ngIf="!bookAddedSuccessfuly" [disabled]="bookForm.invalid"
+                style="margin: 2px; float: right; " mat-raised-button (click)="addNewBook()">Add</button>
+
+
+        </ng-container>
+
+
+    </div>
+
+
+</div>

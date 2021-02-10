@@ -1,0 +1,46 @@
+<ng-container *ngIf="data">
+  <div class="editDialogContainer">
+
+    <h1 mat-dialog-title>Book Details</h1>
+    <div mat-dialog-content>
+      <mat-form-field class="inputFullWidth">
+        <mat-label>Book Title</mat-label>
+        <input matInput [(ngModel)]="editedValues.book_title" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="inputFullWidth">
+        <mat-label>Price</mat-label>
+        <input matInput [(ngModel)]="editedValues.price" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="inputFullWidth">
+        <mat-label>Author First Name</mat-label>
+        <input matInput [(ngModel)]="editedValues.author_first_name" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="inputFullWidth">
+        <mat-label>Author Last Name</mat-label>
+        <input matInput [(ngModel)]="editedValues.author_last_name" />
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+      <button mat-button class="saveButton" (click)="saveNewDetails()">Save</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!data">
+
+  <h1 mat-dialog-title>Are you sure you want to delete this book</h1>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button (click)="deleteDetails()">Yes</button>
+  </div>
+
+</ng-container>

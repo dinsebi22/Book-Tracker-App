@@ -1,0 +1,40 @@
+.body {
+  width: 100%;
+  height: 100vh;
+  background-color: #303030;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.center {
+  /* Center box */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* center box */
+}
+
+.container {
+  width: 70vw;
+  height: 600px;
+}
+
+mat-card {
+  width: calc(100% - 35px);
+  height: calc(100% - 35px);
+}
+
+.newBookDetails {
+  padding-top: 15px;
+  color: white;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button-container {
+  width: 100%;
+}

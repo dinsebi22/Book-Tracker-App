@@ -1,0 +1,11 @@
+.editDialogContainer {
+  width: 30vw;
+}
+
+.inputFullWidth {
+  width: 100%;
+}
+
+.mat-dialog-actions {
+  justify-content: space-between;
+}

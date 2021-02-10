@@ -1,0 +1,19 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="over">
+
+        <button mat-raised-button class="sidenavButtonActions" [routerLink]="['/addNewBook']"
+            routerLinkActive="router-link-active">Add Book</button>
+
+        <button mat-raised-button class="sidenavButtonActions" [routerLink]=" ['/addNewUser']"
+            routerLinkActive="router-link-active">Add Reader</button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <button mat-raised-button (click)=" sidenav.toggle()">Menu</button>
+
+        <app-app-grid></app-app-grid>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

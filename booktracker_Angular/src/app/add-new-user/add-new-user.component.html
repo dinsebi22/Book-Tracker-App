@@ -1,0 +1,79 @@
+<div class="body">
+    <div class="container center">
+
+        <h1 *ngIf="!userAddedSucessfuly">
+            <strong>New Reader</strong>
+        </h1>
+
+        <mat-grid-list cols="6" rowHeight="85px" *ngIf="!userAddedSucessfuly">
+
+
+            <mat-grid-tile colspan="2" rowspan="3">
+                <mat-card>
+                    <img class="center" src="https://img.icons8.com/wired/200/ffffff/add-user-male.png" />
+                </mat-card>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile colspan="4" rowspan="3">
+
+                <mat-card>
+                    <form [formGroup]="userForm">
+
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input formControlName="first_name" matInput placeholder="Mark">
+                            <mat-error *ngIf="first_name && first_name.invalid && first_name.touched">
+                                First name must have at least 2 characters..
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input formControlName="last_name" matInput placeholder="Twain">
+                            <mat-error *ngIf="last_name && last_name.invalid && last_name.touched">
+                                Last name must have at least 2 characters..
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" matInput type="email" placeholder="something@email.com">
+                            <mat-error *ngIf="email && email.invalid && email.touched">
+                                Email must be Valid!
+                            </mat-error>
+                        </mat-form-field>
+
+                    </form>
+
+                </mat-card>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <ng-container *ngIf="userAddedSucessfuly">
+            <div class="center">
+                <img src="https://img.icons8.com/carbon-copy/512/ffffff/check-all--v1.png" />
+                <h1 style="text-align:center;">Reader added Successfuly ^_^ </h1>
+            </div>
+        </ng-container>
+
+
+        <ng-container class="button-container">
+            <button style="margin: 2px;" mat-raised-button [routerLink]="['/']"
+                routerLinkActive="router-link-active">Back</button>
+
+            <button type="submit" *ngIf="!userAddedSucessfuly" [disabled]="userForm.invalid"
+                style="margin: 2px; float: right; " mat-raised-button (click)="addNewUser()">Add</button>
+
+
+        </ng-container>
+
+
+    </div>
+
+
+</div>

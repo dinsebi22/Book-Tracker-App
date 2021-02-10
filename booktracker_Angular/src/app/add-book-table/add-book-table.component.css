@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.idColumn {
+  width: 10%;
+}
+
+.titleColumn {
+  width: 30%;
+}
+
+.buttonColumns {
+  width: 10%;
+}
+
+.tableContainer {
+  max-height: 532px;
+  overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #575757;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f44336;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2617;
+}
+
+.titleContainer {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,10 @@
+h4 {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.contentContainer {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
